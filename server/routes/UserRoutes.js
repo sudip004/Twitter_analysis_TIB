@@ -1,9 +1,11 @@
 const route = require('express').Router();
-const { userRegister, userLogin } = require('../controllers/UserController');
+const { userRegister, userLogin,userLogOut } = require('../controllers/UserController');
 // middleware
 const { authUser } = require('../middlewares/AuthUser');
 
-route.post('/register', userRegister);
-route.post('/login',authUser ,userLogin);
+// route.post('/register', userRegister);
+route.post('/register',userRegister);
+route.post('/login' ,userLogin);
+route.post('/logout' ,userLogOut);
 
 module.exports = route;

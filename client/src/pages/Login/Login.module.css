@@ -1,0 +1,76 @@
+.mainContainer {
+    width: 48%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid green;
+}
+
+.registerContainer {
+    width: 100%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 2rem;
+}
+
+.registerContainer>h1 {
+    width: 20rem;
+    height: 2.5rem;
+    font-style: oblique;
+    letter-spacing: 0.2rem;
+    color: var(--c1);
+}
+
+.registerContainer>div{
+    width: 18rem;
+    height: 1.8rem;
+   border-bottom: 1px solid red;
+}
+
+.raninbow {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid transparent;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+
+    /* Create space for the border animation */
+    border-radius: 5px;
+    background: white;
+    outline: none;
+    z-index: 1;
+  }
+  
+
+
+.registerContainer>button {
+    width: 8rem;
+    height: 1.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    letter-spacing: 0.3rem;
+    background: var(--c1);
+    color: var(--c2);
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.txt{
+font-size: 16px;
+}
+
+.txt>span {
+    letter-spacing: 0.1rem;
+    color: blue;
+    cursor: pointer;
+    text-decoration: underline;
+}

@@ -6,8 +6,10 @@ const {UserModel} = require('../models/UserModel');
 
 const userRegister = async (req, res) => {
     const { name, email, password } = req.body;
-    const user = new UserModel({ name, email, password });
+    if(!name || !email || !password) return res.status(400).send('Fill properly');
+    if(UserModel.findOne({email})) return res.status(400).send('User already exists');
     try {
+        const user = new UserModel({ name, email, password });
         await user.save();
         res.status(201).send('User registered successfully');
     } catch (error) {
@@ -36,6 +38,15 @@ const userLogin = async (req, res) => {
     
 }
 
+const userLogOut = async (req, res) => {
+    try {
+        res.clearCookie('token');
+        res.status(200).send('User logged out successfully');
+    } catch (error) {
+        res.status(400).send(error.message);
+    }
+}
 
 
-module.exports = { userRegister, userLogin };
+
+module.exports = { userRegister, userLogin ,userLogOut};

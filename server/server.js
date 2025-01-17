@@ -1,3 +1,4 @@
+require("dotenv").config()
 const express = require('express');
 const app = express();
 const path = require('path');
@@ -5,18 +6,26 @@ const cookieParser = require("cookie-parser");
 const session = require("express-session");
 const { dbConncetion } = require('./db/db');
 // User Router part
-const {route} = require("./routes/UserRoutes");
+const route = require("./routes/UserRoutes");
+
 
 const port =process.env.PORT || 3000;
 
-
+// middleware part
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use("api",route)
+
+// Route's part
+app.use("/api",route)
+
+
+
+
 
 app.listen(port,()=>{
-    if(!dbConncetion()) process.exit(1);
-    dbConncetion();
+    const database = dbConncetion();
+    if(!database) process.exit(1);
+    
     console.log(`Server is running  ${port}`);
 })
