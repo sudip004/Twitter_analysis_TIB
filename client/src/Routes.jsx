@@ -10,6 +10,7 @@ import LandingPage from './pages/LandingPart/LandingPage';
 import LoginPage from './pages/Login/LoginPage';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
+import AnalyzePage from './pages/Analyze/AnalyzePage';
 
 
 
@@ -25,6 +26,7 @@ export const App = () => {
           <Routes>
             <Route path="/" element={<LandingPage/>} />
             <Route path="/login" element={<LoginPage/>} />
+            <Route path="/analyze" element={<AnalyzePage/>} />
           </Routes>
           <Footer/>
         </Suspense>
