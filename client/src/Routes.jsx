@@ -8,6 +8,8 @@ import Loading from './utils/lodding/Loading';
 
 import LandingPage from './pages/LandingPart/LandingPage';
 import LoginPage from './pages/Login/LoginPage';
+import Header from './components/Header/Header';
+import Footer from './components/Footer/Footer';
 
 
 
@@ -19,10 +21,12 @@ export const App = () => {
     <>
       <div className='main-appContainer'>
         <Suspense fallback={<Loading />}>
+        <Header/>
           <Routes>
-            <Route path="/" element={<LandingPage />} />
+            <Route path="/" element={<LandingPage/>} />
             <Route path="/login" element={<LoginPage/>} />
           </Routes>
+          <Footer/>
         </Suspense>
       </div>
 

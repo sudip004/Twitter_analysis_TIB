@@ -1,0 +1,23 @@
+.mainContainer{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 2.5rem;
+    display: flex;
+    gap: 0.1rem;
+    align-items: center;
+    justify-content: center;
+    background: var(--c1);
+}
+.icone{
+width: 2.3rem;
+height: 2.3rem;
+color: #fdfdfd;
+padding-right: 1rem;
+}
+.mainContainer>p{
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #fff;
+    
+}
